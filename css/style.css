@@ -663,7 +663,7 @@ header .icon.circled {
 }
 
 .homepage #header.ready .overlay {
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 #header .inner {
