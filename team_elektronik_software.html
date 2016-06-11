@@ -31,7 +31,7 @@
     <div id="header1">
 
      
-        <!-- Nav -->
+         <!-- Nav -->
         <nav id="nav">
             <ul>
                 <li>
@@ -40,6 +40,8 @@
                         <li><a href="index.html#banner">Teams</a>
                         </li>
                         <li><a href="index.html#video_film">Rund um das Analysefahrzeug</a>
+                        </li>
+                        <li><a href="index.html#Projektbeschreibung">Projektbeschreibung</a>
                         </li>
                         <li><a href="index.html#features1">Projekt-Betreuer</a>
                         </li>
@@ -50,21 +52,19 @@
                 <li>
                     <a href="">Teams</a>
                     <ul>
-                        <li><a>Mechanik</a>
+                        <li><a href="team_mechanik.html">Mechanik</a>
                             <ul>
                                 <li><a href="team_mechanik_arm.html">Arm</a>
                                 </li>
                                 <li><a href="team_fahrwerk.html">Fahrwerk</a>
                                 </li>
-                                <li><a href="#">Transportwagen</a>
+                                <li><a href="team_transportwagen.html">Transportwagen</a>
                                 </li>
                                 <li><a href="team_tueroeffner.html">Türöffner</a>
                                 </li>
-                                <li><a href="#">Re-Engeneering</a>
-                                </li>
                             </ul>
                         </li>
-                        <li><a>Elektronik/Software</a>
+                        <li><a href="team_elektronik_software.html">Elektronik/Software</a>
                             <ul>
                                 <li><a href="team_elektronik_software.html#ug_GUI">GUI</a>
                                 </li>
@@ -84,7 +84,9 @@
                             <ul>
                                 <li><a href="team_organisation_finanzen.html">Finanzen/Koordination</a>
                                 </li>
-                                <li><a href="#">Marketing/Werbefilm</a>
+                                <li><a href="team_reengineering.html">Re-Engeneering</a>
+                                </li>
+                                <li><a href="team_marketing_werbefilm.html">Marketing/Werbefilm</a>
                                 </li>
                             </ul>
                         </li>
@@ -102,6 +104,8 @@
 
                 <li><a href="sponsoren.html">Sponsoren</a>
                 </li>
+                <li><a href="downloads.html">Downloads</a>
+                </li>
             </ul>
         </nav>
 
@@ -118,21 +122,7 @@
                 </header>
             </article>
 
-            <div class="row 200%">
-                <div class="6u" id="sidebar">
-                    <hr class="first" />
-                    <section>
-                        <header>
-                        </header>
-                        <article>
-                            <img class="image fit" src="images/Gruppenbilder/Elektronik_Software.jpg" />
-                        </article>
-
-                    </section>
-                </div>
-
-
-                <div class="6u important(collapse)" id="content">
+            <div>
                     <header>
 
                     </header>
@@ -147,7 +137,7 @@
                                     <li>Sensorik</li>
                                 </a>
                                 <a href="#ug_ANSTEUERUNG">
-                                    <li>Ansteuerung</li>
+                                    <li>Motorsteuerung</li>
                                 </a>
                                 <a href="#ug_VERKABELUNG">
                                     <li>Verkabelung &amp; Hardware</li>
@@ -163,8 +153,7 @@
 
                     </article>
                 </div>
-            </div>
-
+            
             <hr id="ug_GUI">
             <header>
                 <h2>Untergruppe GUI</h2>
@@ -172,41 +161,67 @@
             <div class="row">
                 <article class="6u special">
 
-                    <p>Die GUI (engl. Graphical User Interface) soll dem Benutzer des Crawlers in Echtzeit (oder in einem noch akzeptablen Zeitverzug) das Bild der Crawler-Webcam übertragen um so eine verbesserte Steuerbarkeit zu gewährleisten.
-                        <br>
-                        <br>Des Weiteren sollen Zusatzinformationen, wie die Aktivität der Roboter-Komponenten und Informationen über den aktuellen Fahrstatus, wie Richtungsanzeige, Geschwindigkeit oder Akkustand, angezeigt werden.
-                        <br>
-                        <br>Aus diesem Grund wurde eine GUI mit der Programiersprache Python unter Verwendung mehrerer Zusatzpackages (u.a. GTK, PyGTK und VideoCapture), entwickelt. Eine in Python programmierte GUI hat den Vorteil, dass das Programm plattformunabhängig und somit mit verschiedenen Betriebssystemen benutzbar ist.
-                        <br>Eine Ergänzung unterschiedlichster Funktionalitäten kann mit Hilfe von verschiedenen Open Source Packages erfolgen.
-                        <br>Derzeit ist eine Aufnahme und Anzeige von Fotos mit einer PC-internen Webcam möglich.
-                        <br>
-                        <br>Im Laufe des nächsten Semesters muss weiter an der Annahme und Verarbeitung der von den Crawler-Komponenten gesendeten Statusinformationen gearbeitet werden.
-                    </p>
+                    <p>Die GUI (engl. Graphical User Interface) soll dem Benutzer des Crawlers in Echtzeit (oder in einem noch akzeptablen Zeitverzug) das Bild der Crawler-Webcam übertragen, um so eine verbesserte Steuerbarkeit zu gewährleisten.</p>
+                    <p>Des Weiteren sollen Zusatzinformationen, wie die Aktivität der Roboter-Komponenten und Informationen über den aktuellen Fahrstatus, wie Richtungsanzeige, Geschwindigkeit oder Akkustand, angezeigt werden.</p>
+                    <p>Zunächst wurde eine GUI mit der Programiersprache Python unter Verwendung mehrerer Zusatzpackages (u.a. GTK, PyGTK und VideoCapture), entwickelt. Aufgrund der Notwendigkeit von zahlreichen Zusatzpaketen, Kompatibilitätsproblemen und daraus resultierendem eingeschränkten Funktionsumfang wurden zwei Folgeansätze als Alternative gewählt: LabVIEW und Qt (eine C++-Klassenbibliothek zur Programmierung einer Benutzeroberfläche).<br><br></p>
+                    <p>Stand der Dinge/aktuelle Aufgaben:</p>
+                    <p>Qt:</p>
+                    <ul class="Text_Aufzaehlung">
+                            <li><p>mehrere eigenständige TCP-Sockets, die auf Threads aufgeteilt, parallel arbeiten, damit ein gleichzeitiges Empfangen von drei Videostreams ermöglicht wird</p></li>
+                            <li><p>Sensor-Daten empfangen und auswerten</p></li>
+                            <li><p>Optimierung der Serverkommunikation</p></li>
+                    </ul>
+                    <br>
+                    <p>LabVIEW:</p>
+                    <ul class="Text_Aufzaehlung">
+                            <li><p>Profilverwaltung</p></li>
+                            <li><p>TCP-Verbindungen realisiert</p></li>
+                            <li><p>Sensor-Daten empfangen und auswerten</p></li>
+                            <li><p>Verzögerungsfreies streamen</p></li>
+                    </ul>
+                    
+                    
+                        
                 </article>
                 <article class="6u special">
                     <img class="image fit" src="images/Arbeitsergebnisse/Team_Elektronik_Software/Slideshow/1.jpg" width="400" />
+                    <img class="image fit" src="#" width="400" alt="Leider fehlt hier ein Bild"/>
                 </article>
             </div>
             <hr id="ug_SENSORIK">
             <header>
                 <h2>Untergruppe Sensorik</h2>
             </header>
-            <p> Die Sensorikgruppe wurde gegründet, um den Crawler zusätzliche Umgebungsinformationen zu liefern.
-                <br>
-                <br>Stand der Dinge:
-                <br>Zur Implementierung der Sensoren ist ein Raspberry Pi B+ vorgesehen, der die Signale mehrerer Sensoren verarbeitet. Es wurden unter anderen Infrarot Abstands-, Temperatur- und Gassensoren implementiert.
-                <br>Die Datenkommunikation mit dem Industrie-PC soll mittels ROS realisiert werden, deshalb werden momentan die bestehenden Programme auf Kompatibilität mit ROS überprüft und adaptiert.
-                <br>Das Konzept der Sensorikgruppe sieht vor, dass zusätzliche Sensoren jederzeit eingebunden werden können
-            </p>
+            <div class="row">
+                <article class="6u special">
+                    <img class="image fit" src="images/Gruppenbilder/SS16/Sensorik.jpg" width="400" />
+                </article>
+                <article class="6u special">
+                    <p> Die Sensorikgruppe wurde gegründet, um durch den Crawler zusätzliche Umgebungsinformationen zu erhalten. Zusätzlich soll durch Sensorinformationen wie z.B. Abstandswerte, die Bedienung des Crawlers über Visualisierungen auf der GUI vereinfacht werden.
+                    <br>
+                    <br>Stand der Dinge:
+                    <br>Zur Implementierung der Sensoren ist ein Raspberry Pi 3 vorgesehen, der die Signale mehrerer Sensoren verarbeitet. Es wurden unter anderen Infrarot Abstands-, Temperatur- und Gassensoren implementiert.
+                    <br>Die Datenkommunikation mit dem Industrie-PC soll mittels ROS realisiert werden, deshalb werden momentan die bestehenden Programme auf Kompatibilität mit ROS überprüft und adaptiert.
+                    <br>Das Konzept der Sensorikgruppe sieht vor, dass zusätzliche Sensoren jederzeit eingebunden werden können.
+                    </p>
+                </article>
+            </div>
             <hr id="ug_ANSTEUERUNG">
             <header>
-                <h2>Untergruppe Ansteuerung</h2>
+                <h2>Untergruppe Motorsteuerung</h2>
             </header>
-            <p>Die Untergruppe Ansteuerung kümmert sich darum das der Crawler sich tatsächlich bewegt.
-                <br>Die Konkrete Aufgabe besteht darin die Informationen vom Industrie-PC/ROS (dem „Gehirn“ des Crawlers) die Kommandos entgegenzunehmen und in für die Motoren verständliche Steuerbefehle und ihnen diese per CAN/CANopen mitzuteilen.
-                <br>Dazu gehört zum einen die Programmierung eines Microcontrollers (LPC1769) und außerdem mussten wir uns viel mit den Motoren und ihren Eigenheiten auseinandersetzen. Der Crawler ist mit mehreren verschiedenen (durchaus starken) BLDC- und Schrittmotoren von der Firma Nanotec ausgestattet. Diese können auf verschiedenste Art angesprochen werden. Wir haben uns dazu entschlossen über das Protokoll CANopen mit ihnen zu kommunizieren.
-                <br>Die wichtigste Aufgabe hierbei war einen eigenen CANopen-Stack zu schreiben, der das gewaltige Overhead des Protokolls in den Griff bekommt. Konkret haben wir einfach zu benutzende Funktionen geschrieben um einzelne Motoren anzusprechen und sie wie gewünscht fahren zu lassen. Der Stack ist auch ein Werkzeug um den Code einfacher zu machen und Redundanzen zu vermeiden.
-            </p>
+            <div class="row">
+                <article class="6u special">
+                    <p>Die Untergruppe Motorsteuerung kümmert sich darum das der Crawler sich tatsächlich bewegt.
+                    <br>Die Konkrete Aufgabe besteht darin die Informationen vom Industrie-PC/ROS (dem „Gehirn“ des Crawlers) die Kommandos entgegenzunehmen und in für die Motoren verständliche Steuerbefehle und ihnen diese per CAN/CANopen mitzuteilen.
+                    <br>Dazu gehört zum einen die Programmierung von Microcontrollern (Rasberry PI und TinyCAN) und außerdem mussten wir uns viel mit den Motoren und ihren Eigenheiten auseinandersetzen. Der Crawler ist mit mehreren verschiedenen (durchaus starken) BLDC- und Schrittmotoren von der Firma Nanotec ausgestattet. Diese können auf verschiedenste Art angesprochen werden. Wir haben uns dazu entschlossen über das Protokoll CANopen mit ihnen zu kommunizieren.
+                    <br>Die wichtigste Aufgabe hierbei war es, mehrere Klassen in objektorientierter Sprache zu schreiben. Diese Klassen können untereinander Kommunizieren und CAN_Signale über ein TinyCAN-Modul auf den Bus legen oder empfangen, um diese dann zu verarbeiten und entsprechend auf Ereignisse zu reagieren.
+                    </p>
+                </article>
+                <article class="6u special">
+                    <img class="image fit" src="images/Gruppenbilder/SS16/Motorsteuerung.jpg" width="400" alt="Leider fehlt hier ein Bild"/>
+                </article>
+            </div>
             <hr id="ug_VERKABELUNG">
             <header>
                 <h2>Untergruppe Verkabelung &amp; Hardware</h2>
@@ -216,45 +231,67 @@
 
                     <p>Das Hauptaugenmerk unserer Gruppe liegt darin, eine geeignete Anordnung zu entwickeln, die eine Wartung und Montage aller in das Elektronikgehäuse zu verbauenden Hardwarekomponenten ermöglicht. Zudem werden Möglichkeiten erarbeitet, um das Gehäuse an den Crawler selbst zu integrieren.</p>
 
-
-                    <h3>Folgende Bauelemente werden zur Unterbringung in das Gehäuse berücksichtigt:</h3>
-                    <ul class="Text_Aufzaehlung">
-                        <li>9 Platinen (ohne Adapter)</li>
-                        <li>Industrie PC</li>
-                        <li>Mikrocontroller</li>
-                        <li>Powerplatinen </li>
-                        <li>Kabel</li>
-                        <li>Akku</li>
-                    </ul>
+                    <img class="image fit" src="#" width="400" alt="Leider fehlt hier ein Bild"/>
+                    
                 </article>
                 <article class="6u special">
-                    <h3>Derzeitige Aufgaben:</h3>
+                    <h3>Folgende Bauelemente werden zur Unterbringung in das Gehäuse berücksichtigt:<br><br></h3>
                     <ul class="Text_Aufzaehlung">
-                        <li>Prüfen ob entsprechende Adapter für CAN-Bus ursprüngliche Anordnung im Gehäuse erlauben.</li>
-                        <li>Umsetzung einer neuen, an die Gegebenheiten angepasste, Öffnungsklappe.</li>
-                        <li>Konstruieren von geeigneten Winkeln zur Montage des Gehäuses.</li>
-                        <li>Prüfen ob Einbau des neuen Akkus ins Gehäuse möglich ist.</li>
+                        <li><p>7 Motor Treiber Platinen</p></li>
+                        <li><p>2 Raspberry Pi</p></li>
+                        <li><p>1 Industrie PC</p></li>
+                        <li><p>2 Arduino Uno</p></li>
+                        <li><p>1 W Lan Router</p></li>
+                        <li><p>1 Netzteil bzw. Batteriepack</p></li>
+                        <li><p>div. kleine Platinen zur Ergänzung</p></li>
+                    </ul>
+                    <h3>Derzeitige Aufgaben:<br><br></h3>
+                    <ul class="Text_Aufzaehlung">
+                        <li><p>Aktualisierung der Verkabelung</p></li>
+                        <li><p>Einbau des neuen Gehäuses</p></li>
+                        <li><p>Auslegung des Akkus</p></li>
+                        <li><p>Aktualisierung der Verkabelungspläne</p></li>
                     </ul>
 
-                    <h3>Zuletzt umgesetzte Umbauten:</h3>
+                    <h3>Zuletzt umgesetzte Umbauten:<br><br></h3>
                     <ul class="Text_Aufzaehlung">
-                        <li>Einbau eines Scharniers zur Öffnung einer Seitenwand</li>
-                        <li>Elektronik-Halterungsmöglichkeit entwickelt und konstruiert</li>
-                        <li>Elektronik-Halterungsmöglichkeit herstellt durch ein 3D-Druckverfahren</li>
+                        <li><p>Einbau eines Scharniers zur Öffnung einer Seitenwand</p></li>
+                        <li><p>Elektronik-Halterungsmöglichkeit entwickelt und konstruiert</p></li>
+                        <li><p>Elektronik-Halterungsmöglichkeit hergestellt durch ein 3D-Druckverfahren</p></li>
                     </ul>
-                    <h3>Zukünftige Aufgaben:</h3>
-                    <p>Aufgrund der weitreichenden Veränderungen der Hardware (neuer Akku, CAN-Adapter), muss im nächsten Semester eine ausführliche Prüfung und Planung zur Umgestaltung des Elektronikgehäuses, auf Basis der aktuellen Anforderungen, erfolgen.</p>
+                    <h3>Zukünftige Aufgaben:<br><br></h3>
+                    <ul class="Text_Aufzaehlung">
+                        <li><p>Einbau neuer Systeme</p></li>
+                        <li><p>Akkuauslegung überdenken</p></li>
+                    </ul>
                 </article>
             </div>
             <hr id="ug_ROS">
             <header>
                 <h2>Untergruppe ROS</h2>
             </header>
-            <p>
-                Es wurde mit der Konzeptionierung und Integration des Robot Operating System (ROS) ein stabiles Fundament für zukünftige Entwicklungen auf dem Crawler gelegt. Die vorhandene Funktionalität des Crawlers (Steuerung per Gamepad über Kabel) wurde im neuen System wiederhergestellt und um die GUI-anbindung, eine Webcam und die Übertragung aller Daten über WLAN erweitert.</p>
-
-            <p>Durch den Einsatz eines modularen Softwareaufbaus wurde erreicht, das der Crawler leicht um weitere Elemente (z.B.: die Sensorik) erweitert werden kann.
-            </p>
+            <div class="row">
+                <article class="6u special">
+                    <p>
+                        Das Robot Operating System (kurz: ROS) ist das Herzstück des Crawlers. Verteilt auf einen Industrie-PC und zwei Raspberry Pis mit Linux-Distributionen verknüpft es die einzelnen Peripheriegeräte und ermöglicht so einen komfortablen Datenaustausch.
+                    </p>
+                    <p>
+                        Die Komponenten des ROS sind über Ethernet miteinander verbunden und kommunizieren mittels ROS-spezifischen Messages. Die Schnittstellen nach außen sind:
+                    </p>
+                    <ul class="Text_Aufzaehlung">
+                        <li><p>WLAN</p></li>
+                        <li><p>CAN</p></li>
+                        <li><p>I2C/SPI</p></li>
+                    </ul>
+                    <p>
+                        Der modulare Aufbau unter ROS wird ermöglicht durch die sogenannten Nodes (Knoten). Nodes sind Programme, die in C++ oder auch in Python programmiert werden können.  Alle Berechnungen werden über die Nodes durchgeführt und über einen Master (hier auf dem Industrie-PC) koordiniert.
+                    </p>
+                </article>
+                <article class="6u special">
+                    <img class="image fit" src="#" width="400" alt="Leider fehlt hier ein Bild"/>
+                    <img class="image fit" src="images/Arbeitsergebnisse/Team_ROS/ROS_Konzept.png" />
+                </article>
+            </div>
             <hr id="ug_CONTROLLER">
             <div class="row">
                 <article class="6u special">
@@ -263,6 +300,8 @@
                     </header>
                     <p>Der zur Steuerung des Crawlers verwendete Controller ist via USB mit einem Laptop verbunden. Die Anbindung dieses Laptops an die ROS-Plattform erfolgt über eine Wireless-LAN Schnittstelle.</p>
                     <p>Die Daten des Controllers werden über ein Python-Programm in Form von Events ausgewertet und zwischengespeichert. Über eine TCP/IP-Verbindung werden die Daten dann zyklisch an den TCP/IP-Server der ROS-Plattform gesendet. Der Programmablauf wird mit Multi-Threading parallelisiert. Dadurch können die Controller-Events abgefragt und gleichzeitig Daten an den Crawler gesendet werden. Somit wird verhindert, dass der Programmablauf durch das Warten auf die Controller-Events blockiert wird.
+                    </p>
+                    <p>Die Gruppe Controller wurde zum WS15/16 aufgelöst, da am Controller derzeit kein weiterer Verbesserungsbedarf besteht.
                     </p>
 
                 </article>
