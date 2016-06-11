@@ -1,0 +1,15 @@
+Programm zum Bearbeiten: brackets
+
+-Header muss auf allen Seiten gleich sein
+-team_marketing_werbefilm muss bearbeitet werden
+-downloads muss bearbeitet werden
+
+kurzbeschreibung mit inhaltsbegriff "Crawler" auf Index Seite mehr Suchbegriffe müssen auf Index führen
+
+Seiten für die Großen Gruppen anlegen (Mechanik, Elektronik, verwaltung) (Elektronik Link auf Seite Elektronik ganz oben)
+
+
+
+
+WS16:
+- Reengenering zu Verwaltung integrieren
