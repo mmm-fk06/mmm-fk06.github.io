@@ -162,22 +162,21 @@
                 <article class="6u special">
 
                     <p>Die GUI (engl. Graphical User Interface) soll dem Benutzer des Crawlers in Echtzeit (oder in einem noch akzeptablen Zeitverzug) das Bild der Crawler-Webcam übertragen, um so eine verbesserte Steuerbarkeit zu gewährleisten.</p>
-                    <p>Des Weiteren sollen Zusatzinformationen, wie die Aktivität der Roboter-Komponenten und Informationen über den aktuellen Fahrstatus, wie Richtungsanzeige, Geschwindigkeit oder Akkustand, angezeigt werden.</p>
-                    <p>Zunächst wurde eine GUI mit der Programiersprache Python unter Verwendung mehrerer Zusatzpackages (u.a. GTK, PyGTK und VideoCapture), entwickelt. Aufgrund der Notwendigkeit von zahlreichen Zusatzpaketen, Kompatibilitätsproblemen und daraus resultierendem eingeschränkten Funktionsumfang wurden zwei Folgeansätze als Alternative gewählt: LabVIEW und Qt (eine C++-Klassenbibliothek zur Programmierung einer Benutzeroberfläche).<br><br></p>
+                    <p>Des Weiteren sollen Zusatzinformationen, wie die Aktivität der Roboter-Komponenten und Informationen über den aktuellen Fahrstatus wie beispielsweise Richtungsanzeige, Temperatur, Luftqualität, Geschwindigkeit oder Akkustand angezeigt werden.</p>
+                    <p>Zunächst wurde eine GUI mit der Programiersprache Python unter Verwendung mehrerer Zusatzpackages u.a. GTK, PyGTK und VideoCapture entwickelt. Aufgrund der Notwendigkeit von zahlreichen Zusatzpaketen, Kompatibilitätsproblemen und daraus resultierendem eingeschränkten Funktionsumfang wurden zwei Folgeansätze als Alternative gewählt: LabVIEW und Qt (eine C++Klassenbibliothek zur Programmierung einer Benutzeroberfläche).<br><br></p>
                     <p>Stand der Dinge/aktuelle Aufgaben:</p>
                     <p>Qt:</p>
                     <ul class="Text_Aufzaehlung">
-                            <li><p>mehrere eigenständige TCP-Sockets, die auf Threads aufgeteilt, parallel arbeiten, damit ein gleichzeitiges Empfangen von drei Videostreams ermöglicht wird</p></li>
-                            <li><p>Sensor-Daten empfangen und auswerten</p></li>
-                            <li><p>Optimierung der Serverkommunikation</p></li>
+                            <li><p>TCP und Stream möglich - die Daten werden korrekt empfangen, ausgewertet und dargestellt</p></li>
+                            <li><p>To-Do: Erweiterung des Algorithmus um zwei weitere Sensordaten (Akku 1 und Akku 2)</p></li>
+                            <li><p>Optimierung der Benutzerfreundlichkeit</p></li>
                     </ul>
                     <br>
                     <p>LabVIEW:</p>
                     <ul class="Text_Aufzaehlung">
-                            <li><p>Profilverwaltung</p></li>
                             <li><p>TCP-Verbindungen realisiert</p></li>
                             <li><p>Sensor-Daten empfangen und auswerten</p></li>
-                            <li><p>Verzögerungsfreies streamen</p></li>
+                            <li><p>Verzögerungsfreies Streamen</p></li>
                     </ul>
                     
                     
